@@ -152,9 +152,13 @@ graphql(Schema, `{
 });
 
 const express = require('express');
+const session = require('express-session');
 const graphqlHttp = require('express-graphql');
 
 const app = express();
+// app.use(session({
+//     secret: "anything you don't know"
+// }) )
 app.use('/graphql', graphqlHttp({
     schema: Schema,
     pretty: true
